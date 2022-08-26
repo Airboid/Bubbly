@@ -1,0 +1,376 @@
+:root {
+    --clr-detail-blue: #ebf3f8;
+    --clr-primary-blue: #38A3EE;
+    --clr-hover-dark-blue: #1f5e8b;   
+    --clr-text-black: #244458;
+    --clr-heading-white: #fff;
+    --box-shadow: 2px 2px 2px 2px rgba(15, 44, 62, 0.2);
+    --ff-text: "Poppins", sans-serif;
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+html {
+    box-sizing: border-box;
+    font-family: var(--ff-text);
+    font-weight: 400;
+    font-size: 1.4em;
+    color: var(--clr-text-black);
+    line-height: 1.6em;
+    background-color: var(--clr-heading-white);
+}
+body, h1, h2, p {
+    margin: 0;
+}
+h1 {
+    font-weight: 900;
+    font-size: 1.8em;
+    line-height: 1.6em;
+}
+h2 {
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+h3 {
+    font-weight: 500;
+    font-size: 1em;
+    line-height: 1em;
+}
+ul {
+    padding: 0;
+    list-style: none;
+}
+a, .bubble-item h2 {
+    color: var(--clr-primary-blue);
+}
+::selection {
+    background-color:#1f5e8be1;
+    color: var(--clr-heading-white);
+}
+/*background configuration*/
+div[class^="bg-"] {
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-home {
+    background: url(img/background.png);
+    padding: 0.5em 5em;
+}
+.bg-home nav, .bg-home nav ul, .split, .bg-learn ul, .nav-master, .nav-master ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bg-home nav {
+    flex-wrap: wrap;
+}
+.bg-home nav a, .nav-master a {
+    padding: 1em 2em;
+    white-space: nowrap;
+    font-size: min(6vw, 100%);
+}
+.bg-home nav img {
+    width: min(50vw, 12em);
+}
+.bg-home nav a, .btn, .btn-large, .bg-signup .social img, .bg-learn img, .nav-master a, .dropdown,  .addbubble img:hover, .slidebubble:hover {
+    text-decoration: none;
+    color: var(--clr-heading-white);
+    font-weight: 900;
+    -webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-o-transition: all 0.3s ease-in;
+	-ms-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
+}
+.bg-home nav a:hover, .bg-learn a:hover, .bg-signup .github a:hover, a:visited {
+    color: var(--clr-hover-dark-blue);
+}
+.bg-home .split {
+    padding: 4.2em 0;
+    flex-direction: row;
+}
+.bg-home .split img {
+    padding-left: 1em;
+    width: 22vw;
+}
+.bg-home .split div, .bg-learn .split div, .bubble-item, .slide-item {
+    display: flex;
+    flex-direction: column;
+}
+.bg-home .split p, .bg-learn .split p {
+    font-size: 1.4em;
+    line-height: 1.4em;
+    color: var(--clr-heading-white);
+}
+.bg-home .split h1, .bg-learn .split h1{
+    color: var(--clr-heading-white);
+}
+.bg-learn {
+    background: url(img/background-2.png);
+    padding: 0em 3em 2em 3em;
+}
+.bg-learn ul {
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+}
+.bg-learn li {
+    padding: 0.8em 0;
+}
+.bg-learn .split {
+    padding: 1.5em 0;
+}
+.bg-learn .split img {
+    padding: 0 1em;
+    width: 25vw;
+}
+.bg-learn a {
+    color: var(--clr-heading-white);
+}
+.bg-signup {
+    background: url(img/background-3.png);
+    padding: 2em 3em 2em 3em;
+    display: grid;
+    row-gap: 15vh;
+    column-gap: 20vw;
+    grid-template-areas: 
+    "logo signup"
+    "social signup"
+    "github github";
+}
+.bg-signup img {
+    width: min(5.5em, 30vh);
+}
+.bg-signup .logo {
+    grid-area: logo;
+}
+.bg-signup .social {
+    grid-area: social;
+}
+.bg-signup .github {
+    grid-area: github;
+}
+.bg-signup .logo, .bg-signup .social, .bg-signup .github {
+    text-align: center;
+    white-space: nowrap;
+    font-size: min(1em, 3vw);
+    color: var(--clr-heading-white);
+}
+.signup, .signin {
+    grid-area: signup;
+    padding: 1em;
+    font-size: min(1em, 4vw);
+    border: 3px solid var(--clr-primary-blue);
+    border-radius: 0.2em;
+    background-color: var(--clr-heading-white);
+    width: fit-content;
+    height: fit-content;
+}
+.signin {
+    margin-top: 1.3em;
+}
+.bg-signup.in {
+    row-gap: 10vh;
+}
+.signup input, .signin input {
+    outline: none;
+    border: 2px solid #ccc;
+    padding: 0.5em;
+    margin-bottom: 1.8em;
+    font-size: 1em;
+}
+.signup input:focus, .signin input:focus {
+    border: 3px solid var(--clr-primary-blue);
+    border-radius: 0.2em;
+}
+.nav-master {
+    padding: 0 1em;
+    position: fixed;
+    width: 100%;
+    z-index: 0;
+}
+.nav-master i {
+    margin-left: 0.3em;
+}
+.nav-master, .sec-shadow, .bubble-item {
+    box-shadow: var(--box-shadow);
+}
+.nav-master a {
+    color: var(--clr-text-black);
+}
+.nav-master .dropdown {
+    position: absolute;
+    display: none;
+    top: 90px;
+}
+.nav-master a:hover, .nav-master .selected, .list-drop:hover > a {
+    color: var(--clr-primary-blue);
+}
+.nav-master .selected {
+    position: relative;
+    border-bottom: 5px solid var(--clr-primary-blue);
+    top: 2px;
+    border-radius: 0.2em;
+}
+.list-drop:focus > a {
+    color: var(--clr-primary-blue);
+}
+.list-drop a:hover + .dropdown,  .dropdown:hover {
+    display: block;
+    opacity: 1;
+}
+.dropdown {
+    position: absolute;
+    display: none;
+    opacity: 0;
+    flex-direction: column;
+}
+.dropdown li {
+    background-color: var(--clr-heading-white);
+    border: 2px solid var(--clr-primary-blue);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 0.5em;
+    border-radius: 4em;
+    padding: 0;
+    width: 100%;
+}
+.dropdown i {
+    margin-right: 0.8em;
+}
+.bg-main {
+    padding: 3em;
+    background-color: var(--clr-detail-blue);
+}
+.bg-main img {
+    width: 4em;
+}
+.sec-blue {
+    border: 2px solid var(--clr-primary-blue);
+    padding: 1em 2em;
+    border-radius: 0.2em;
+}
+.sec-shadow {
+    padding: 1.5em 3em;
+    border-radius: 0.2em;
+}
+.sec-shadow.a {
+    margin: 2em 0;
+}
+.sec-shadow.a h1 {
+    color: var(--clr-primary-blue);
+    margin-bottom: 0.5em;
+}
+.sec-blue, .sec-shadow.a, .bubble-item, .nav-master {
+    background-color: var(--clr-heading-white);
+}
+.addbubble {
+    margin-left: 5em;
+    border: 5px dashed var(--clr-detail-blue);
+    height: 15em;
+    justify-content: center;
+    width: 12em;
+}
+.bubble-item {
+    border-radius: 0.2em;
+    border: solid var(--clr-primary-blue);
+    border-width: 10px 0;
+}
+.bubble-item, .slide-item {
+    align-items: center;
+    padding: 1em;
+}
+.sec-blue, .slider, .addbubble {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/*General button configuration*/
+.btn {
+    padding: 0.7em 2em;
+    font-size: 1.5em;
+    font-size: min(7.5vw, 1.62em);
+}
+.btn, .btn-large {
+    margin-top: 1em;
+    align-self: center;
+    justify-content: center;
+    background-color: var(--clr-primary-blue);
+    border-radius: 3em;
+    display: block;
+    text-align: center;
+}
+.btn-large {
+    padding: 0.7em 7vw;
+    text-transform: uppercase;
+    border-radius: 0.2em;
+    white-space: nowrap;
+}
+.btn-large.white {
+    background-color: var(--clr-heading-white);
+    color: var(--clr-primary-blue);
+}
+.btn:hover, .btn-large:hover {
+    background-color: var(--clr-hover-dark-blue);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.bg-signup .social img:hover, .bg-learn img:hover,  .addbubble img:hover, .slidebubble:hover {
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+}
+.btn-large.white:hover {
+    color: var(--clr-heading-white);
+}
+/*Media queries*/
+@media only screen and (max-width: 60em) {
+    /*Sign Up*/
+    .bg-signup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.4em;
+    }
+    .bg-signup .github {
+        word-wrap: break-word;
+        white-space: normal;
+    }
+    .signin {
+        margin: 0;
+    }
+}
+@media only screen and (max-width: 55em) {
+    /*Homepage*/
+    .bg-home .split {
+        flex-direction: column-reverse;
+        padding: 0 0 1em 0;
+    }
+    .bg-home .split img {
+        padding: 1.3em 0;
+        width: 60%;
+        align-self: center;
+    }
+    .bg-home nav {
+        justify-content: center;
+    }
+    .bg-home {
+        padding: 0 1.5em;
+    }
+    /*Learn*/
+    .bg-learn .split.a {
+        flex-direction: column-reverse;
+    }
+    .bg-learn .split.b {
+        flex-direction: column;
+    }
+    .bg-learn .split img {
+        padding: 0 0 1.5em 0;
+    }
+}
+@media only screen and (max-width: 33em) {
+    .bg-learn, .bg-home .split {
+        font-size: 3.5vw;
+    }
+}
