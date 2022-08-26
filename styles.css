@@ -84,7 +84,7 @@ div[class^="bg-"] {
 	-ms-transition: all 0.3s ease-in;
 	transition: all 0.3s ease-in;
 }
-.bg-home nav a:hover, .bg-learn a:hover, .bg-signup .github a:hover, a:visited {
+.bg-home nav a:hover, .bg-learn a:hover, .bg-signup .github a:hover, .bg-main a:visited {
     color: var(--clr-hover-dark-blue);
 }
 .bg-home .split {
