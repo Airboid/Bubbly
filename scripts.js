@@ -1,46 +1,32 @@
-/*Includes the contents of w3-include-html div class to a section*/
-function includeHTML() {
-    var z, i, elmnt, file, xhttp;
-    /*Loop through a collection of all HTML elements*/
-    z = document.getElementsByTagName("*");
-    for (i = 0; i < z.length; i++) {
-      elmnt = z[i];
-      /*Search for elements with a certain atrribute*/
-      file = elmnt.getAttribute("w3-include-html");
-      if (file) {
-        /*Make an HTTP request using the attribute value as the file name*/
-        xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4) {
-            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-            /*Remove the attribute, and call this function once more*/
-            elmnt.removeAttribute("w3-include-html");
-            includeHTML();
-          }
-        }
-        xhttp.open("GET", file, true);
-        xhttp.send();
-        /*Exit the function*/
-        return;
-      }
-    }
-  };
-//Sticky navbar codes
-  // When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
 
-// Get the navbar
-var navbar = document.getElementById("navbar");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
+//Toggle active hamburger menu
+const hamburger = document.querySelector(".hamburger");
+const drop = document.querySelector(".list-drop");
+const dropLink = document.querySelector(".link")
+const navMenu = document.querySelector(".normal-list");
+const navDrop = document.querySelector(".dropdown");
+drop.addEventListener("click", () => {
+  navDrop.classList.toggle("active");
+  dropLink.classList.toggle("active");
+});
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+  if (navDrop.classList.contains("active")) {
+    navDrop.classList.remove("active");
+    dropLink.classList.remove("active");
   }
-}
+});
+//Toggle bubble carousel
+const bubbleArrowr = document.querySelector(".sec-shadow.a .slidebubble.right"); //for some reason querySelectorAll deoesn't work for .slidebubble
+const bubbleArrowl = document.querySelector(".sec-shadow.a .slidebubble.left");
+const addBubble = document.querySelector(".addbubble");
+const bubbleItem = document.querySelector(".bubble-item");
+bubbleArrowr.addEventListener("click", () => {
+  addBubble.classList.toggle("active");
+  bubbleItem.classList.toggle("active");
+});
+bubbleArrowl.addEventListener("click", () => {
+  addBubble.classList.toggle("active");
+  bubbleItem.classList.toggle("active");
+});

@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Includes universal head parameters-->
-    <div w3-include-html="head.html"></div>
-    <script src="scripts.js" type="text/javascript"></script>
-    <script>
-        includeHTML();
-    </script>
+<!--Includes universal head parameters-->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+    $(function () {
+        $('#unihead').load('head.html');
+    });
+</script>
 </head>
 <body>
+    <div id="unihead"></div>
     <div class="bg-signup">
         <div class="logo">
             <img src="img/logo-big.png" alt="circle with blue border and bubbles on the inside">
@@ -27,7 +30,7 @@
             <br>
             <input type="text" id="Password" name="Password" />
             <br>
-            <a href="#" class="btn-large">Sign Up</a>
+            <a href="/mybubbles.html" class="btn-large">Sign Up</a>
         </form>
         <div class="social">
             <img src="img/twitter.png" style="display: inline-block; margin-right: 1em;" alt="Transparent bubble encapsulating a twitter icon.">

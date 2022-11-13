@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Includes universal head parameters-->
-    <div w3-include-html="head.html"></div>
-    <script src="scripts.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/985dc26571.js" crossorigin="anonymous"></script>
-    <script>
-        includeHTML();
-    </script>
+<!--Includes universal head parameters-->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+    $(function () {
+        $('#unihead').load('head.html');
+    });
+</script>
 </head>
 <body>
+    <div id="unihead"></div>
     <nav class="nav-master">
         <img src="img/logo-big.png" style="width: 3em" alt="circle with blue border and bubbles on the inside">
-        <ul>
+        <ul class="normal-list">
             <li><a class="selected">My Bubbles</a></li>
             <li class="list-drop">
-                <a>Account <i class="fa-solid fa-caret-down"></i></a>
+                <a class="link">Account <i class="fa-solid fa-caret-down"></i></a>
                 <ul class="dropdown">
                     <li><a><i class="fa-solid fa-chart-column"></i>Bubble Stats</a></li>
                     <li><a><i class="fa-solid fa-image-portrait"></i>Change Info</a></li>
@@ -27,22 +29,41 @@
             <li><a>Help</a></li>
             <li><a>Log Out</a></li>
         </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
     </nav>
     <div class="bg-main">
         <section class="sec-shadow a">
-            <h1>My Bubbles</h1>
-            <p>You have no free bubbles left, try <a href="#">Premium</a>. Or check the stats of an existing one below:</p>
-            <br>
-            <div class="sec-blue">
-                <div class="bubble-item">
-                    <img src="img/eurobubble.png" alt="Blue ring with a blue euro sign inside">
-                    <br>
-                    <h2>Untitled</h2>
-                    <h3>Euro bubble</h3>
-                    <p>Active since 12/12/21</p>
-                </div>
-                <div class="addbubble">
-                    <img src="img/addbubble.png" alt="White plus sign inside a blue circle">
+            <header>
+                <h1>My Bubbles</h1>
+                <p>You have no free bubbles left, try <a href="#">Premium</a> or check the stats of an existing one
+                    below:
+                </p>
+            </header>
+            <div class="white-bg">
+                <div class="split">
+                    <div class="slidebubble left">
+                        <img src="img/slidebubblemirror.png"
+                            alt="Thin, white arrow head pointing to the right inside a blue circle">
+                    </div>
+                    <div class="bubble-item active">
+                        <img src="img/eurobubble.png" alt="Blue ring with a blue euro sign inside">
+                        <h2>Untitled</h2>
+                        <p>Euro bubble</p>
+                        <h3>Active since 12/12/21</h3>
+                    </div>
+                    <div class="addbubble">
+                        <img src="img/addbubble.png" alt="White plus sign inside a blue circle">
+                        <br>
+                        <p>Add new bubble</p>
+                    </div>
+                    <div class="slidebubble right">
+                        <img src="img/slidebubble.png"
+                            alt="Thin, white arrow head pointing to the right inside a blue circle">
+                    </div>
                 </div>
             </div>
         </section>
@@ -52,41 +73,48 @@
                 <h3>Total balance:</h3>
                 <h2>€2.750</h2>
             </header>
-            <div class="slider">
-                <div class="slide-item">
-                    <img src="img/transfer.png" alt="Blue ring with two arrows pointing at opposite directions inside">
-                    <h3>Transfer</h3>
+            <div class="white-bg">
+                <div class="slider">
+                    <div class="slide-item">
+                        <img src="img/transfer.png"
+                            alt="Blue ring with two arrows pointing at opposite directions inside">
+                        <h3>Transfer</h3>
+                    </div>
+                    <div class="slide-item">
+                        <img src="img/receive.png" alt="Blue ring with an arrow pointing downwards inside">
+                        <h3>Receive</h3>
+                    </div>
+                    <div class="slide-item">
+                        <img src="img/pay.png" alt="Blue ring with a QR code symbol inside">
+                        <h3>Instant Pay</h3>
+                    </div>
+                    <div class="slide-item">
+                        <img src="img/history.png" alt="Blue ring with a ruled paper sheet inside">
+                        <h3>Billing History</h3>
+                    </div>
+                    <div class="slide-item">
+                        <img src="img/stats.png" alt="Blue ring with a compound bar and line graph inside">
+                        <h3>Bubble Stats</h3>
+                    </div>
                 </div>
-                <div class="slide-item">
-                    <img src="img/receive.png" alt="Blue ring with an arrow pointing downwards inside">
-                    <h3>Receive</h3>
+                <hr>
+                <div class="card">
+                    <h2>Your virtual card</h2>
+                    <img src="img/bubblecard.png"
+                        alt="Blue credit card template with information written on it in white">
+                    <p>The last digit represents the corresponding bubble slot in 'My Bubbles'. Keep this in mind while
+                        choosing your payment currency.</p>
                 </div>
-                <div class="slide-item">
-                    <img src="img/pay.png" alt="Blue ring with a QR code symbol inside">
-                    <h3>Instant Pay</h3>
+                <div class="premium">
+                    <h1>More bubbles, less trouble</h1>
+                    <p>Unlock more bubbles and make as many transactions you want free of extra taxes.</p>
+                    <a href="" class="btn-large white">Try Premium</a>
                 </div>
-                <div class="slide-item">
-                    <img src="img/history.png" alt="Blue ring with a ruled paper sheet inside">
-                    <h3>Billing History</h3>
-                </div>
-                <div class="slidebubble">
-                    <img src="img/slidebubble.png" alt="Thin, white arrow head pointing to the right inside a blue circle">
-                </div>
+                <hr>
+                <a href="" class="btn-large red">Delete Bubble</a>
             </div>
-            <hr>
-            <div class="card">
-                <h2>Your virtual card</h2>
-                <img src="img/bubblecard.png" alt="Blue credit card template with information written on it in white">
-                <p>The last digit represents the corresponding bubble slot in 'My Bubbles'. Keep this in mind while choosing your payment currency.</p>
-            </div>
-            <div class="premium">
-                <h1>More bubbles, less trouble</h1>
-                <p>Unlock more bubbles and make as many transactions you want free of extra taxes.</p>
-                <a href="" class="btn-large white">Try Premium</a>
-            </div>
-            <hr>
-            <a href="" class="btn-large">Delete Bubble</a>
         </section>
     </div>
 </body>
+
 </html>
