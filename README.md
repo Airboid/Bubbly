@@ -1,2 +1,2 @@
 # Bubbly
-Site front for a virtual wallet meant to showcase fundamental skills at organizing files and problem solving; as a result, this prototype does not use Bootstrap. Contains four pages: an index, a learn session, two different registration screens and the control panel.
+Site front for a virtual wallet meant to showcase fundamental skills at organizing files and problem solving; as a result, this prototype does not use Bootstrap, but is still responsive. Contains four pages: an index, a learn session, two different registration screens and the control panel.
